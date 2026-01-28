@@ -1,9 +1,4 @@
-# Basic Dockerfile for backend
-# Note: This is a basic version. Students should optimize it with:
-# - Multi-stage builds
-# - Smaller base images (alpine)
-# - Security best practices
-# - Layer optimization
+# Dockerfile for Orion CRM Backend
 
 FROM node:22
 
