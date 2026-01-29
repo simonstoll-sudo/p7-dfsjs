@@ -1,4 +1,9 @@
-# Dockerfile for Orion CRM Frontend
+# Basic Dockerfile for frontend
+# Note: This is a basic version. Students should optimize it with:
+# - Multi-stage builds (build stage + nginx serve stage)
+# - Smaller base images (alpine)
+# - Security best practices
+# - Static file serving optimization
 
 FROM node:22
 
