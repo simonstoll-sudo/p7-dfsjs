@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { organizationService } from '../services/organizationService';
-import { CreateOrganizationSchema, UpdateOrganizationSchema } from '../models/schemas';
+import { CreateOrganizationSchema, UpdateOrganizationSchema } from '../models/organizationModel';
 
 export const organizationController = {
   async getAll(req: Request, res: Response): Promise<void> {
