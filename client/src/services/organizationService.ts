@@ -1,13 +1,6 @@
 import axios from 'axios';
-import {
-  Organization,
-  Contact,
-  CreateOrganizationInput,
-  UpdateOrganizationInput,
-  CreateContactInput,
-  UpdateContactInput,
-  Stats,
-} from '../types';
+import type { Organization, CreateOrganizationInput, UpdateOrganizationInput } from '../types/organization';
+import type { Stats } from '../types/shared';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
@@ -45,37 +38,6 @@ export const organizationService = {
 
   getStats: async (): Promise<Stats> => {
     const { data } = await api.get<Stats>('/organizations/stats');
-    return data;
-  },
-};
-
-export const contactService = {
-  getAll: async (): Promise<Contact[]> => {
-    const { data } = await api.get<Contact[]>('/contacts');
-    return data;
-  },
-
-  getById: async (id: string): Promise<Contact> => {
-    const { data } = await api.get<Contact>(`/contacts/${id}`);
-    return data;
-  },
-
-  create: async (input: CreateContactInput): Promise<Contact> => {
-    const { data } = await api.post<Contact>('/contacts', input);
-    return data;
-  },
-
-  update: async (id: string, input: UpdateContactInput): Promise<Contact> => {
-    const { data } = await api.put<Contact>(`/contacts/${id}`, input);
-    return data;
-  },
-
-  delete: async (id: string): Promise<void> => {
-    await api.delete(`/contacts/${id}`);
-  },
-
-  getStats: async (): Promise<Stats> => {
-    const { data} = await api.get<Stats>('/contacts/stats');
     return data;
   },
 };

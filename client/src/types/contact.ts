@@ -1,13 +1,4 @@
-export interface Organization {
-  id: string;
-  name: string;
-  industry?: string;
-  website?: string;
-  description?: string;
-  contacts?: Contact[];
-  createdAt: string;
-  updatedAt: string;
-}
+import type { Organization } from './organization';
 
 export interface Contact {
   id: string;
@@ -22,15 +13,6 @@ export interface Contact {
   updatedAt: string;
 }
 
-export interface CreateOrganizationInput {
-  name: string;
-  industry?: string;
-  website?: string;
-  description?: string;
-}
-
-export interface UpdateOrganizationInput extends Partial<CreateOrganizationInput> {}
-
 export interface CreateContactInput {
   firstName: string;
   lastName: string;
@@ -41,7 +23,3 @@ export interface CreateContactInput {
 }
 
 export interface UpdateContactInput extends Partial<CreateContactInput> {}
-
-export interface Stats {
-  total: number;
-}

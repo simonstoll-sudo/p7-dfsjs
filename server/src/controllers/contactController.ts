@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { contactService } from '../services/contactService';
-import { CreateContactSchema, UpdateContactSchema } from '../models/schemas';
+import { CreateContactSchema, UpdateContactSchema } from '../models/contactModel';
 
 export const contactController = {
   async getAll(req: Request, res: Response): Promise<void> {
